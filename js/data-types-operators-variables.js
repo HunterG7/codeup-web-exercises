@@ -17,12 +17,12 @@ let perplexed; // perplexed is undefined (no value is assigned)
 perplexed + 2;
 // perplexed = undefined
 
-var price = 2.7;
+let price = 2.7;
 price.toFixed(2);
 // price = '2.70'
 
-var price = "2.7";
-price.toFixed(2);
+let stringPrice = "2.7";
+stringPrice.toFixed(2);
 // cannot execute
 
 // 1.4
@@ -132,38 +132,59 @@ if (classFull === true && classSchedule === true) {
 let itemsBought = 12;
 let offerExpiration = true;
 let premium = true;
-let productOffer;
+let productOffer = true;
 if (offerExpiration === true && (premium === true || itemsBought <= 2)) {
-    productOffer === true;
+    productOffer = true;
 } else {
-    productOffer === false;
+    productOffer = false;
 }
 
 //4.1
 let username = 'codeup';
 let password = 'notastrongpassword';
 let minPasswordChar = 5;
-if (password.length < minPasswordChar) {
-    // false => user needs to enter a new password
-} else {
-    // true => move on
+for (let i = 0; i < 100; i++) {
+    if (password.length < minPasswordChar) {
+        console.log("Please enter a new password that is no less than 5 characters.");
+        // prompt user for new password
+    } else {
+        break;
+    }
 }
 
 //4.2
-let noUserInPass = true;
-password = password.replace(username, '');
 /* if password contains username, then username is removed from password.
 If password doesn't contain username, then password stays the same */
+password = password.replace(username, '');
 
 //4.3
 let maxUsernameChar = 20;
-if (username.length > maxUsernameChar) {
-    // false => user needs to enter new username
-} else {
-    // true => move on
+for (let i = 0; i < 100; i++) {
+    if (username.length > maxUsernameChar) {
+        console.log("Please enter a new username that is no more than 20 characters");
+        // prompt user for new username
+    } else {
+        break;
+    }
 }
 
 //4.4
-let noWhitespace = true; // whitespace is removed from bother user and pass
-username = username.trim();
-password = password.trim();
+/* user is continuously prompted to enter a new username and password until they have
+no white spaces at the beginning or end */
+for (let i = 0; i < 10; i++) {
+    if (username.indexOf(0) === '' || username.lastIndexOf()) {
+        console.log("Please enter a new username without spaces.");
+        // promt user for new username
+    } else {
+        break;
+    }
+}
+for (let i = 0; i < 10; i++) {
+    if (password.indexOf(0) === '' || password.lastIndexOf()) {
+        console.log("Please enter a new password without spaces.");
+        // prompt user for new password
+    } else {
+        break;
+    }
+}
+
