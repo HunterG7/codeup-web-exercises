@@ -9,9 +9,8 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-function sayHello(name) {
-    return `Hello ${name}!`;
-}
+const sayHello = (name) => `Hello ${name}!`;
+// console.log(sayHello("Hunter"));
 
 /**
  * TODO:
@@ -32,8 +31,7 @@ let helloMessage = sayHello("Hunter");
  */
 
 let myName = "Hunter";
-// console.log(sayHello(myName));
-
+sayHello(myName);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -57,12 +55,9 @@ let random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-function isTwo(random) {
-    if (random === 2) {
-        return true;
-    } else {
-        return false;
-    }
+const isTwo = (random) => {
+    let result = (random === 2);
+    return result;
 }
 // console.log(random);
 // console.log(isTwo(random));
@@ -79,10 +74,12 @@ function isTwo(random) {
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculateTip(tipPercent, billTotal) {
-    return billTotal * tipPercent;
+const calculateTip = (tipPercent, billTotal) => {
+    let result = billTotal * tipPercent;
+    return result;
 }
-// console.log(calculateTip(.25, 25.50));
+// let toTip = calculateTip(.2, 75.50);
+// console.log(toTip.toLocaleString('en-US', {style: 'currency', currency: 'USD'}));
 
 /**
  * TODO:
@@ -91,11 +88,10 @@ function calculateTip(tipPercent, billTotal) {
  * then display the dollar amount they should tip
  */
 
-let billTotal = prompt("What is your bill total?(No $ sign needed)");
-let tipPercent = prompt("What is the percentage you would lke to tip?(No % sign needed)");
-tipPercent = tipPercent / 100;
-let tipAmount = calculateTip(tipPercent, billTotal);
-alert(`You should tip $${tipAmount}.`);
+let userTotal = prompt("What is the total for your bill?");
+let userTip = prompt("How much would you like to tip?");
+let userFinalTip = calculateTip(userTip, userTotal);
+alert(`You should tip ${userFinalTip}.`);
 
 /**
  * TODO:
@@ -112,8 +108,8 @@ alert(`You should tip $${tipAmount}.`);
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(price, discountPercent) {
-    return price - (price * discountPercent);
+const applyDiscount = (fullPrice, discountPercent) => {
+    let discountPrice = fullPrice * (1 - discountPercent);
+    return discountPrice;
 }
-// let discountPrice = applyDiscount(100, .2);
-// console.log(`The discounted price is $${discountPrice}.`);
+// console.log(applyDiscount(25, .5));

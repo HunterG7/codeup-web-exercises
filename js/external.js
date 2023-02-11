@@ -17,8 +17,10 @@ let rentPerDay = prompt("How much should renting a movie cost per day?(No $ sign
 let littleMermaidRentDays = prompt("How many days should I rent Little Mermaid?");
 let brotherBearRentDays = prompt("How many days should I rent Brother Bear?");
 let herculesRentDays = prompt("How many days should I rent Hercules?");
-let totalRentPrice = parseInt(rentPerDay) * (parseInt(littleMermaidRentDays) + parseInt(brotherBearRentDays) + parseInt(herculesRentDays));
-alert(`The total rent price is $${totalRentPrice}.`);
+
+let totalRentPrice = parseFloat(rentPerDay) * (parseInt(littleMermaidRentDays) + parseInt(brotherBearRentDays) + parseInt(herculesRentDays));
+let formattedRentPrice = totalRentPrice.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+alert(`The total rent price is ${formattedRentPrice}.`);
 
 // 3.2
 alert("I work as a contractor for 3 companies: Google, Amazon, and Facebook.");
@@ -28,9 +30,11 @@ let amazonHours = prompt("How many hours should I work at Amazon this week?");
 let amazonPay = prompt("How much should I be paid per hour at Amazon?(No $ sign needed)");
 let facebookHours = prompt("How many hours should I work at Facebook this week?");
 let facebookPay = prompt("How much should I be paid per hour at Facebook?(No $ sign needed)");
-let oneWeeksPay = (parseInt(googlePay) * parseInt(googleHours)) + (parseInt(amazonPay) * parseInt(amazonHours))
-    + (parseInt(facebookPay) * parseInt(facebookHours));
-alert(`Based on the working hours and hourly pay you gave me, I will make $${oneWeeksPay} this week.`);
+
+let oneWeeksPay = (parseFloat(googlePay) * parseFloat(googleHours)) + (parseFloat(amazonPay) * parseFloat(amazonHours))
+    + (parseFloat(facebookPay) * parseFloat(facebookHours));
+let formattedWeeksPay = oneWeeksPay.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+alert(`Based on the working hours and hourly pay you gave me, I will make ${formattedWeeksPay} this week.`);
 
 //3.3
 alert("Please decide if this hypothetical student can enroll into their class.");
