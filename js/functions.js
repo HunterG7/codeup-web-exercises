@@ -9,7 +9,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-const sayHello = (name) => `Hello ${name}!`;
+const sayHello = (name) => `Hello, ${name}!`;
 // console.log(sayHello("Hunter"));
 
 /**
@@ -30,7 +30,7 @@ let helloMessage = sayHello("Hunter");
  * console.
  */
 
-let myName = "Hunter";
+const myName = "Hunter";
 sayHello(myName);
 
 // Don't modify the following line, it generates a random number between 1 and 3
@@ -55,8 +55,8 @@ let random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-const isTwo = (random) => {
-    let result = (random === 2);
+const isTwo = (number) => {
+    let result = (number === 2);
     return result;
 }
 // console.log(random);
@@ -108,6 +108,7 @@ alert(`You should tip ${userFinalTip}.`);
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
+// parseFloat and divide by 100 to make sure you're getting correct data type and converting percentage to decimal.
 const applyDiscount = (fullPrice, discountPercent) => {
     let discountPrice = fullPrice * (1 - discountPercent);
     return discountPrice;
