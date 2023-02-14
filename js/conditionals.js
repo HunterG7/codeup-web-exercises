@@ -65,19 +65,14 @@
         switch (randomColor) {
             case "blue":
                 return "The sky is blue.";
-                break;
             case "orange":
                 return "Oranges are orange.";
-                break;
             case "red":
                 return "Firetrucks are red.";
-                break;
             case "yellow":
                 return "The sun is yellow.";
-                break;
             case "green":
                 return "Grass is green.";
-                break;
             default:
                 return `I do not know anything that is the color ${randomColor}.`;
         }
@@ -121,22 +116,16 @@
         switch (luckyNum) {
             case 0:
                 return totalPrice;
-                break;
             case 1:
                 return totalPrice * 0.9;
-                break;
             case 2:
                 return totalPrice * 0.75;
-                break;
             case 3:
                 return totalPrice * 0.65;
-                break;
             case 4:
                 return totalPrice * 0.5;
-                break;
             case 5:
                 return 0;
-                break;
         }
     }
 // console.log(calculateTotal(5, 10));
@@ -175,18 +164,18 @@
      * HINT: The way we prompt for a value could be improved
      */
 
-    const isEven = (userNum) => {
+    const isEven = userNum => { // checks to see if num is even or odd
         if (userNum % 2 === 0) {
             return "Your number is even.";
         } else {
             return "Your number is odd.";
         }
     }
-    const plusOneHundred = (userNum) => {
-        return userNum + 100;
-    }
-    const isPositive = (userNum) => {
-        if (userNum > 0) {
+    const plusOneHundred = userNum => userNum + 100;
+    const isPositive = userNum => {
+        if (userNum === 0) {
+            return "0 is neither positive or negative.";
+        } else if (userNum > 0) {
             return "Your number is positive.";
         } else {
             return "Your number is negative";
@@ -195,9 +184,8 @@
 
     let doesConfirm = confirm("Would you like to enter a number?");
     if (doesConfirm === true) {
-        let userNum = prompt("Please enter a number.");
-        userNum = Number(userNum); // changes string to number
-        if (isNaN(userNum) === false) { // checks whether converted string is a number
+        let userNum = Number(prompt("Please enter a number."));
+        if (isNaN(userNum) === false && typeof userNum === "number") { // checks whether converted string is a number
             alert(isEven(userNum));
             alert(`Your number plus 100 is ${plusOneHundred(userNum)}.`);
             alert(isPositive(userNum));
