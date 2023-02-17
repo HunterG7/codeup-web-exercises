@@ -39,4 +39,11 @@
 
     }
 
+// generates a random number between 2 values
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+
+
 })();

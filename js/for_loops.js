@@ -2,7 +2,7 @@
 (() => {
     // 2
     const showMultiplicationTable = number => {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 1; i <= 10; i++) {
             let product = number * i;
             console.log(`${number} x ${i} = ${product}`);
         }
