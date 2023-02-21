@@ -1,5 +1,4 @@
-(function() {
-    "use strict";
+"use strict";
 
 // number => $$
     function toUSDollars(number, language = "en", country = "US", currency = "USD") {
@@ -34,16 +33,22 @@
         return pyramid;
     }
 
-// generate random number between two parameters
-    function x () {
-
-    }
-
 // generates a random number between 2 values
     function randomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+// create array of random non-repeating numbers of any size
+    function arrayOfRandomNumbers (lengthOfArray) {
+        let array = [];
+        for (let i = 0; i < lengthOfArray; i++) {
+            let random = randomNumber(1, lengthOfArray + 1000);
+            while (array.includes(random)) {
+                random = randomNumber(1, lengthOfArray + 1000);
+            }
+            array.push(random);
+        }
+        return array;
+    }
 
 
-})();
