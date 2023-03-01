@@ -37,22 +37,6 @@ textarea {
     margin: 0;
 }
 
-/*  */
-.clickable,
-label,
-input[type=button],
-input[type=submit],
-input[type=file],
-button {
-    cursor: pointer;
-}
-
-/*  */
-textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
-}
-
 /* removes spacing between cells in tables */
 table {
     border-collapse: collapse;

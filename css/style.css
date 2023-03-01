@@ -1,3 +1,8 @@
 .fancy-header {
-    color: purple;
+    color: slategray;
+    text-align: center;
+}
+h2 {
+    text-decoration: underline;
+    color: slategray;
 }

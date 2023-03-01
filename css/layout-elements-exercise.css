@@ -1,0 +1,33 @@
+header.container {
+    height: 70px;
+}
+
+section.container {
+    height:600px;
+    background-color: #e7e7e7;
+}
+
+div, h1, button, a {
+    color: #514343;
+}
+
+a:hover  {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.circle {
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+}
+
+.pad {
+    padding: 15px;
+}
+footer {
+    height: 465px;
+}

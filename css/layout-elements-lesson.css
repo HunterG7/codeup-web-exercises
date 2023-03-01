@@ -1,0 +1,9 @@
+header.container {
+    height: 80px;
+    border-bottom: 1px solid #000;
+}
+
+.container.hero-scene {
+    height: 80vh;
+    background-color: darkblue;
+}
