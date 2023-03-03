@@ -1,0 +1,141 @@
+:root {
+    --primary-color: #0F141A;
+    --light-gray: #536371;
+}
+.twitter-logo {
+    height: 25px;
+    width: 30px;
+    padding-bottom: 15px;
+}
+div.nav, div.advertisement {
+    flex: 0 1 250px;
+    padding-top: 15px;
+}
+.nav h1 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+h1 {
+    font-weight: 1;
+    font-size: 25px;
+    color: var(--primary-color);
+}
+.tweet-button {
+    background-color: #1C9BEF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 200px;
+    height: 45px;
+}
+.mini-profile {
+    padding-top: 150px;
+    column-gap: 10px;
+}
+.mini-profile-pic {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.twitter-name {
+    color: #536371;
+}
+.profile-pic-dots {
+    padding-left: 32px;
+    font-size: 24px;
+}
+.back-arrow {
+    width: 25px;
+    height: 25px;
+}
+.total-tweets {
+    color: #536371;
+}
+.current-profile {
+    padding-top: 15px;
+}
+.current-profile-name {
+    font-size: 22px
+}
+main.column {
+    border: 2px solid #EFF3F4;
+    border-top: white;
+    border-bottom: white;
+}
+.avatar {
+    border: 4px solid white;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    margin: -80px;
+    position: absolute;
+    left: 540px;
+
+}
+.container.navigation {
+    width: 250px;
+}
+.dots-button {
+    border-radius: 50%;
+    color: black;
+    height: 35px;
+    width: 35px;
+    font-size: 25px;
+    background-color: white;
+    border-color: #CFD9DD;
+}
+.follow-button {
+    border-radius: 20px;
+    color: white;
+    background-color: #0F141A;
+    height: 35px;
+    width: 85px;
+    border-color: black;
+}
+.profile-icons {
+    padding-top: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.bio {
+    padding-top: 20px;
+    color: var(--primary-color);
+}
+.bio h1 {
+    font-size: 22px
+}
+.city-state, .join-date, .light-gray-me {
+    color: var(--light-gray);
+}
+.links-in-bio {
+    padding-top: 10px;
+}
+.location-logo {
+    height: 30px;
+    width: 30px;
+    padding-right: 5px;
+    color: var(--light-gray);
+}
+.link-logo {
+    height: 26px;
+    width: 26px;
+    color: var(--light-gray);
+    padding-left: 17px;
+    padding-right: 5px;
+}
+.bio-link {
+    color: #2A9EF0;
+}
+.bio-link:hover {
+    text-decoration: underline;
+}
+.calendar-logo {
+    color: var(--light-gray);
+    padding-left: 17px;
+    height: 30px;
+    width: 30px;
+    padding-right: 5px;
+}
+
+
