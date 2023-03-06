@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Exercise</title>
+    <link rel="stylesheet" href="css/resets.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/forms-exercise.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <section class="container grow justify-center">
+            <div class="row">
+                <div class="column align-center justify-center">
+                    <div class="title-wrapper">
+                        <h1>Register With Us</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column align-center justify-space-between">
+                    <form method="POST" action="https://request-inspector.glitch.me/">
+                        <fieldset>
+                            <legend><h4>Login</h4></legend>
+                            <div class="input-wrapper">
+                                <label for="email">Email:</label>
+                                <input type="text" id="email" name="email">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="password">Password:</label>
+                                <input type="text" id="password" name="password">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><h4>Tell us about yourself</h4></legend>
+                            <div class="input-wrapper">
+                                <label for="bio"></label>
+                                <textarea name="bio" id="bio"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><h4>How did You hear about us?</h4></legend>
+                            <div class="input-wrapper">
+                                <label for="radio advertisement">Radio Advertisement</label>
+                                <input type="radio" name="radio advertisement" id="radio advertisement">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="billboard">Billboard</label>
+                                <input type="radio" name="billboard" id="billboard">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="internet advertisement">Internet Advertisement</label>
+                                <input type="radio" name="internet advertisement" id="internet advertisement">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="other">Other</label>
+                                <input type="radio" name="other" id="other">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><h4>What browser are you using?</h4></legend>
+                            <label for="browser"></label>
+                            <select name="browser" id="browser">
+                                <option value="chrome">Google Chrome</option>
+                                <option value="safari">Safari</option>
+                                <option value="firefox">Firefox</option>
+                                <option value="edge">Microsoft Edge</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </fieldset>
+
+                        <div class="submit-wrapper input-wrapper align-center justify-center">
+                            <label for="submit"></label>
+                            <input type="submit" name="submit" id="submit" value="Submit Form">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

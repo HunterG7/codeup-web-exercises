@@ -1,0 +1,27 @@
+.title-wrapper, .submit-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.input-wrapper {
+    padding: 12px;
+}
+fieldset{
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border-width: 2px;
+    width: 500px;
+}
+input[type="submit"], select {
+    background-color: white;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+textarea{
+    width: 450px;
+    height: 100px;
+}

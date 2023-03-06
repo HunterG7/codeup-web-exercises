@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lecture Follow Along</title>
+    <link rel="stylesheet" href="css/resets.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+<!-- Don't do this => Username: <input type="text" id="username"> -->
+    <br>
+    <br>
+    <input type="submit" >
+    <br>
+
+    <h4>Assorted inputs</h4>
+    <input type="date" name="date"><br>
+    <!-- date can take min and max attributes -->
+    <input type="color" name="pickColor"><br>
+    <input type="range" name="evaluation"><br>
+    <!-- range can take min, max, and step attributes -->
+    <input type="number" name="number"><br>
+    <!-- number can take min, max, and step attributes -->
+    <!-- email, tel, and url inputs are predominantly mobile-oriented -->
+
+</form>
+</div>
+</body>
+</html>
