@@ -1,0 +1,108 @@
+.header, .main-row, .footer {
+    height: 100px;
+    width: 900px;
+    padding: 10px
+}
+.header h1 {
+    font-size: 45px;
+}
+.header a {
+    color: #3C3CFF;
+    text-decoration: underline;
+}
+.img-row {
+    width: 900px;
+}
+.header .nav {
+    padding-right: 20px;
+}
+.sub-section h2, .main-section h2 {
+    padding-bottom: 35px;
+    padding-top: 20px;
+}
+.main-row {
+    height: 400px;
+}
+.social-media-links-img {
+    height: 50px;
+    width: 125px;
+}
+.footer .social-media-links-wrapper {
+    margin-bottom: 10px;
+}
+.header .column .hidden-on-desktop {
+    display: none;
+}
+
+@media screen and (max-width: 600px){
+    .header, .img-row, .main-row, .footer {
+        padding: 0;
+        gap: 10%;
+        margin-inline: 5%;
+    }
+    .header .nav {
+        display: flex;
+        justify-content: stretch;
+    }
+    .container {
+        align-items: center;
+        justify-content: center;
+    }
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        flex: 1 0 0;
+    }
+    .header .column .hidden-on-desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: #CBFFFF;
+        border: 1px solid #CCC;
+        padding: 5%;
+    }
+    .header .column .hidden-on-desktop a {
+        text-decoration: none;
+        color: #000;
+    }
+    .header .company-name h1 {
+        max-width: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .header .nav .nav-links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header .nav .nav-links a {
+        max-width: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 200%;
+        width: 200%;
+        background-color: #CCC;
+    }
+    .main-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    h2, p {
+        text-align: center;
+    }
+    .footer .social-media-column p {
+        display: none;
+    }
+
+
+
+}
+
