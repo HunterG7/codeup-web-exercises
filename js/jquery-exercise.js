@@ -19,21 +19,21 @@ $(function() {
 	// alert('h1 elements: ' + $('h1').text());
 
 	// Exercise 3
-	$('h1').click(function(e){
-		$('h1').css('background-color', 'orange');
-	});
-
-	$('p').dblclick(function(e){
-		$('p').css('font-size', '18px');
-	});
-
-	$('li').hover(
-		function(e){
-			$('li').css('color', 'red');
-		},
-		function(e){
-			$('li').css('color', 'black');
-		}
-	);
+	// $('h1').click(function(e){
+	// 	$(this).css('background-color', 'orange');
+	// });
+	//
+	// $('p').dblclick(function(e){
+	// 	$(this).css('font-size', '18px');
+	// });
+	//
+	// $('li').hover(
+	// 	function(e){
+	// 		$(this).css('color', 'red');
+	// 	},
+	// 	function(e){
+	// 		$(this).css('color', 'black');
+	// 	}
+	// );
 
 })
