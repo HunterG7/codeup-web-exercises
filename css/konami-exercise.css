@@ -1,0 +1,19 @@
+body {
+    background-color: #288dcc;
+}
+h2.title {
+    font-size: 110px;
+    font-family: Rockwell, sans-serif;
+    height: 110px;
+}
+.sub-text-wrapper h3{
+    font-weight: normal;
+}
+.sub-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 4px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}

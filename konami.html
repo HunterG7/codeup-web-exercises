@@ -3,44 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Konami Code</title>
+    <link rel="stylesheet" href="css/resets.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/konami-exercise.css">
 </head>
 <body>
-<h1>Konami Code Exercise</h1>
+<div class="page-wrapper">
+    <div class="container grow justify-center align-center">
+        <div class="row justify-center align-center full-width">
+            <div class="column justify-center align-center text-center">
+                <h2 class="title">Konami Code Exercise</h2>
+                <div class="sub-text-wrapper">
+                    <h2 class="sub-text">Do you know the konami code?</h2>
+                    <h3 class="sub-text">Please enter the konami code and press enter.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-<script>
-	"use strict";
-
-	let keyCodeArr = [];
-	let correctArr = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
-	$(document).keyup(function(event) {
-		console.log(event.keyCode);
-
-		keyCodeArr.push(event.keyCode);
-		console.log(keyCodeArr);
-		if (keyCodeArr.length === 11){
-			let count = 0;
-			let numCorrect = 0;
-			keyCodeArr.forEach((element) => {
-				if (element === correctArr[count]){
-					numCorrect++;
-				}
-				count++;
-			});
-			if (numCorrect === 11){
-				$('body').css('background-color', 'white');
-				$('h1').css('color', 'black');
-				$('h1').text('Konami Code Exercise');
-				alert('You have added 30 lives!');
-
-            } else {
-				$('body').css('background-color', 'black');
-				$('h1').css('color', 'white');
-				$('h1').text('That is not the Konami Code!');
-            }
-			keyCodeArr = [];
-        }
-	});
-
-</script>
+<script src="js/konami-exercise.js"></script>
 </body>
 </html>
