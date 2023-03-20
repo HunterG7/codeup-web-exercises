@@ -1,0 +1,44 @@
+body {
+    background-color: lightgray;
+}
+header {
+    overflow: hidden;
+    animation: 3s linear 1s infinite;
+    height: 10vh;
+}
+div.main {
+    height: 90vh;
+}
+.code-row {
+    min-width: 90vw;
+}
+.code-row .column {
+    border: 1px solid #000;
+    aspect-ratio: 1;
+}
+.title-row {
+    padding: 10px 0;
+    min-width: 90vw;
+}
+.title-wrapper {
+    max-width: 40vw;
+    overflow-x: hidden;
+}
+
+#title {
+    color: #000;
+    animation-name: rightToLeft;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* animation: rightToLeft 4.5s linear infinite; */
+}
+
+@keyframes rightToLeft {
+    0% {
+        transform: translateX(145%);
+    }
+    100% {
+        transform: translateX(-145%);
+    }
+}
