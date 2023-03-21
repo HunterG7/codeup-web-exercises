@@ -37,3 +37,33 @@ dd.invisible {
     width: 15px;
     background-color: orange;
 }
+.container {
+    margin-top: 25px;
+}
+h3 {
+    padding: 6px 0;
+}
+li {
+    padding: 3px;
+}
+.section-2{
+    padding-bottom: 25px;
+}
+button.highlight-btn {
+    border: 1px solid black;
+    border-radius: 5px;
+    max-width: 200px;
+    cursor: pointer;
+}
+.btn-on {
+    background-color: lightgreen;
+    transition:all .5s ease;
+}
+.section-3{
+    min-height: 450px;
+}
+.section-3 img {
+    border: 1px solid red;
+    height: 256px;
+    width: 256px;
+}
