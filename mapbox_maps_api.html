@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Exercise</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="css/resets.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/mapbox-maps-api.css">
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="container grow">
+        <div class="row grow">
+            <div class="column align-center justify-center">
+                <div id="map" style='width: 800px; height: 600px;'></div>
+                <script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiaHVudGVyZzciLCJhIjoiY2xmazBqa3Y1MDY5NzNwbXMzd2c5cnNnZCJ9.WVxQo3MEZWJqZ4xxC8raDA';
+					const map = new mapboxgl.Map({
+						container: 'map', // container ID
+						style: 'mapbox://styles/mapbox/outdoors-v12', // style URL
+						center: [-98.489615, 29.426827], // starting position [lng, lat]
+						zoom: 9, // starting zoom
+					});
+                </script>
+                <div class="row align-center btn-row">
+                    <button id="resetMap">Reset Map</button>
+                    <button id="goToFavPlace">Press for my Favorite Places to Eat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/mapbox-maps-api.js"></script>
+</body>
+</html>
