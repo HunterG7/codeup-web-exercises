@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Lecture</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="css/resets.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/css.mapbox-lecture.css">
+
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="container grow">
+        <div class="row grow">
+            <div class="column justify-center align-center">
+                <h1>MAPBOX</h1>
+                <div id='map' style='width: 800px; height: 600px;'></div>
+                <script>
+					mapboxgl.accessToken = 'pk.eyJ1IjoiaHVudGVyZzciLCJhIjoiY2xmanZ2MzRpMDR2cTQxbXNramJzenloZSJ9.hW5Y3XssOa7VAnYgaWKUTw';
+					const map = new mapboxgl.Map({
+						container: 'map', // container ID
+						style: 'mapbox://styles/mapbox/satellite-streets-v12', // style URL
+						center: [-98.489615, 29.426827], // starting position [lng, lat]
+						zoom: 9, // starting zoom
+					});
+					let popup = new mapboxgl.Popup()
+						.setLngLat([-98.489615, 29.426827])
+						.setHTML("<p>Codeup Rocks!</p>")
+						.addTo(map)
+
+                </script>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
