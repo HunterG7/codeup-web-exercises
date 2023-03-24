@@ -1,6 +1,5 @@
 "use strict"
 
-const accessToken = 'pk.eyJ1IjoiaHVudGVyZzciLCJhIjoiY2xmazBqa3Y1MDY5NzNwbXMzd2c5cnNnZCJ9.WVxQo3MEZWJqZ4xxC8raDA';
 let resetMap = document.querySelector('#resetMap');
 
 const spirulina = {

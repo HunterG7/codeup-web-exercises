@@ -1,0 +1,65 @@
+header.container {
+    height: 60px;
+    background-color: #64CBFF;
+}
+header .row {
+    height: 75px;
+}
+header h1 {
+    color: #FFF;
+}
+section {
+    margin: 20px 0;
+}
+section .row {
+    /*border: 1px solid red;*/
+}
+.map-row{
+    min-height: 50vh;
+}
+section .column {
+    /*border: 1px solid blue;*/
+}
+.search-row {
+   gap: 5px;
+}
+.weather-card .row {
+    width: inherit;
+}
+.middle-card-col {
+    height: 100px;
+}
+.top-card {
+    height: 50%;
+}
+.bottom-card {
+    height: 50%;
+}
+.icon-temp-row {
+    height: 80%;
+}
+.bottom-card .weather-property {
+    color: rgba(192, 192, 192, 77%);
+}
+.temperature {
+    font-size: 50px;
+}
+.weather-card {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+#search-bar {
+    width: 20vw;
+    height: 25px;
+}
+#search-btn {
+    height: 25px;
+    cursor: pointer;
+}
+#map {
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
