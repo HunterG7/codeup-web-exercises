@@ -9,8 +9,8 @@ mapboxgl.accessToken = MAPBOX_ID;
 const map = new mapboxgl.Map({
 	container: 'map', // container ID
 	style: 'mapbox://styles/mapbox/streets-v12', // style URL
-	center: [-74.5, 40], // starting position [lng, lat]
-	zoom: 9 // starting zoom
+	center: [-98.4946, 29.4252], // starting position [lng, lat]
+	zoom: 10 // starting zoom
 });
 
 let searchInput = document.querySelector('#search-bar');
@@ -81,23 +81,94 @@ const formatWeatherProperties = (cards) => {
 		}
 		let avgPressure = Math.floor((totalPressure / 8) + 0.5);
 
-		buildCards(cards, avgTemp, avgWindSpeed, avgHumidity, avgPressure, cardNumber);
+		cardIndex -= 8;
+		let unformattedDate = cards.list[cardIndex].dt_txt;
+		let date = formatDate(unformattedDate);
+
+		let icon = weatherIcon(cards.list[cardNumber - 1].weather[0].main);
+
+		buildCards(cards, avgTemp, avgWindSpeed, avgHumidity, avgPressure, date, icon, cardNumber);
 	}
 }
 
+// find which weather icon to display
+const weatherIcon = (weatherDescription) => {
+ 	weatherDescription = weatherDescription.toLowerCase();
+	switch (weatherDescription){
+		case 'rain' || 'thunderstorm' || 'drizzle':
+			return '10d';
+		case 'snow':
+			return '13d';
+		case 'clear':
+			return '01d';
+		case 'clouds':
+			return '03d';
+		default:
+			return '50d';
+	}
+}
+
+// format date correctly
+const formatDate = (date) => {
+	let formattedDateArr = date.split(' ').splice(date[1], 1).join('')
+		.split('-');
+	let dateNoYear = [parseInt(formattedDateArr[1]), formattedDateArr[2]];
+	switch (dateNoYear[0]) {
+		case 1:
+			dateNoYear[0] = 'January'
+			break;
+		case 2:
+			dateNoYear[0] = 'February'
+			break;
+		case 3:
+			dateNoYear[0] = 'March'
+			break;
+		case 4:
+			dateNoYear[0] = 'April'
+			break;
+		case 5:
+			dateNoYear[0] = 'May'
+			break;
+		case 6:
+			dateNoYear[0] = 'June'
+			break;
+		case 7:
+			dateNoYear[0] = 'July'
+			break;
+		case 8:
+			dateNoYear[0] = 'August'
+			break;
+		case 9:
+			dateNoYear[0] = 'September'
+			break;
+		case 10:
+			dateNoYear[0] = 'October'
+			break;
+		case 11:
+			dateNoYear[0] = 'November'
+			break;
+		case 12:
+			dateNoYear[0] = 'December'
+			break;
+	}
+	return dateNoYear.join(' ');
+}
+
 // builds html for each card
-const buildCards = (cards, temp, windSpeed, humidity, pressure, cardNumber) => {
+const buildCards = (cards, temp, windSpeed, humidity, pressure, date, icon, cardNumber) => {
 	let weatherCard = document.querySelector(`.weather-card-${cardNumber}`);
 	weatherCard.innerHTML =
 		`<div class="column weather-card">
 			<!--top half of card-->
 			<div class="row top-card">
-				<div class="column">
+				<div class="column align-center">
+					<div class="row justify-center align-center" id="date">${date}</div>
 					<div class="row icon-temp-row">
-						<!--icon column-->
-						<div class="column"></div>
 						<!--temperature column-->
 						<div class="column align-center justify-center">
+							<div class="img-wrapper">
+								<img src="https://openweathermap.org/img/wn/${icon}@2x.png">
+							</div>
 							<p class="temperature">${temp}&deg;F</p>
 							<p>${cards.list[cardNumber - 1].weather[0].main}</p>	
 						</div>
@@ -106,12 +177,12 @@ const buildCards = (cards, temp, windSpeed, humidity, pressure, cardNumber) => {
 			</div>
 			<!--bottom half of card-->
 			<div class="row bottom-card">
-				<div class="column justify-space-between">
+				<div class="column justify-center">
 					 <p class="weather-property">Wind</p>
 					 <p class="weather-property">Humidity</p>
 					 <p class="weather-property">Pressure</p>
 				</div>
-				<div class="column justify-space-between">
+				<div class="column justify-center">
 					<p>${windSpeed} mph</p>
 					<p>${humidity}%</p>
 					<p>${pressure}</p>

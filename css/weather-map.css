@@ -30,10 +30,10 @@ section .column {
     height: 100px;
 }
 .top-card {
-    height: 50%;
+    height: 60%;
 }
 .bottom-card {
-    height: 50%;
+    height: 40%;
 }
 .icon-temp-row {
     height: 80%;
@@ -42,7 +42,7 @@ section .column {
     color: rgba(192, 192, 192, 77%);
 }
 .temperature {
-    font-size: 50px;
+    font-size: 30px;
 }
 .weather-card {
     border: 1px solid #000;
@@ -62,4 +62,11 @@ section .column {
     border: 1px solid white;
     border-radius: 20px;
 }
+#date {
+    width: inherit;
+    height: 20%;
+}
 
+.bottom-card .column {
+    gap: 10px;
+}
