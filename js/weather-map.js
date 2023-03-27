@@ -17,10 +17,7 @@ let searchInput = document.querySelector('#search-bar');
 let searchBtn = document.querySelector('#search-btn');
 
 // grabs geocode of input to pass to the api in order to receive weather data
-const getWeatherData = async () => {
-	let coords = await geocode(searchInput.value, MAPBOX_ID);
-	let lon = coords[0],
-		lat = coords[1];
+const getWeatherData = async (lat, lon) => {
 	try {
 		const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_APPID}&units=imperial`);
 		const data = await response.json();
@@ -166,7 +163,7 @@ const buildCards = (cards, temp, windSpeed, humidity, pressure, date, icon, card
 					<div class="row icon-temp-row">
 						<!--temperature column-->
 						<div class="column align-center justify-center">
-							<div class="img-wrapper">
+							<div class="row justify-center align-center img-wrapper">
 								<img id="weather-icon" alt="weather icon" src=${icon}>
 							</div>
 							<p class="temperature">${temp}&deg;F</p>
@@ -191,10 +188,7 @@ const buildCards = (cards, temp, windSpeed, humidity, pressure, date, icon, card
 		</div>`;
 }
 
-const formatMap = async () => {
-	let coords = await geocode(searchInput.value, MAPBOX_ID);
-	let lon = coords[0],
-		lat = coords[1];
+const formatMap = async (lat, lon) => {
 	map.flyTo({
 		center: ([lon, lat]),
 		zoom: (9)
@@ -204,9 +198,21 @@ const formatMap = async () => {
 // when button is clicked cards are created
 searchBtn.addEventListener('click', async (e)=>{
 	e.preventDefault();
-	const cards = await getWeatherData();
+	let coords = await geocode(searchInput.value, MAPBOX_ID);
+	let lon = coords[0],
+		lat = coords[1];
+	const cards = await getWeatherData(lat, lon);
 	formatWeatherProperties(cards);
-	await formatMap(cards);
+	await formatMap(lat, lon);
+});
+
+// when map is clicked, weather is shown in that location
+map.on('click',  async (e)=>{
+	let lat = e.lngLat.lat,
+	 	lon = e.lngLat.lng;
+	const cards = await getWeatherData(lat, lon);
+	formatWeatherProperties(cards);
+	await formatMap(lat, lon);
 });
 
 // site is defaulted on san antonio weather
