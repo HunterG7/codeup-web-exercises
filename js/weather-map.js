@@ -96,15 +96,13 @@ const weatherIcon = (weatherDescription) => {
  	weatherDescription = weatherDescription.toLowerCase();
 	switch (weatherDescription){
 		case 'rain' || 'thunderstorm' || 'drizzle':
-			return '10d';
+			return 'img/rain.png';
 		case 'snow':
-			return '13d';
+			return 'img/snowflake.png';
 		case 'clear':
-			return '01d';
+			return 'img/sun.png';
 		case 'clouds':
-			return '03d';
-		default:
-			return '50d';
+			return 'img/cloud.png';
 	}
 }
 
@@ -156,6 +154,8 @@ const formatDate = (date) => {
 
 // builds html for each card
 const buildCards = (cards, temp, windSpeed, humidity, pressure, date, icon, cardNumber) => {
+	let subHeader = document.querySelector('.sub-header');
+	subHeader.innerText = `Showing Weather in ${cards.city.name}, ${cards.city.country}`;
 	let weatherCard = document.querySelector(`.weather-card-${cardNumber}`);
 	weatherCard.innerHTML =
 		`<div class="column weather-card">
@@ -167,10 +167,10 @@ const buildCards = (cards, temp, windSpeed, humidity, pressure, date, icon, card
 						<!--temperature column-->
 						<div class="column align-center justify-center">
 							<div class="img-wrapper">
-								<img src="https://openweathermap.org/img/wn/${icon}@2x.png">
+								<img id="weather-icon" alt="weather icon" src=${icon}>
 							</div>
 							<p class="temperature">${temp}&deg;F</p>
-							<p>${cards.list[cardNumber - 1].weather[0].main}</p>	
+							<p id="weather-description">${cards.list[cardNumber - 1].weather[0].main}</p>	
 						</div>
 					</div>
 				</div>
@@ -191,11 +191,22 @@ const buildCards = (cards, temp, windSpeed, humidity, pressure, date, icon, card
 		</div>`;
 }
 
+const formatMap = async () => {
+	let coords = await geocode(searchInput.value, MAPBOX_ID);
+	let lon = coords[0],
+		lat = coords[1];
+	map.flyTo({
+		center: ([lon, lat]),
+		zoom: (9)
+	})
+}
+
 // when button is clicked cards are created
 searchBtn.addEventListener('click', async (e)=>{
 	e.preventDefault();
 	const cards = await getWeatherData();
 	formatWeatherProperties(cards);
+	await formatMap(cards);
 });
 
 // site is defaulted on san antonio weather
