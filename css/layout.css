@@ -8,6 +8,12 @@
     display:flex;
     flex-direction: column;
 }
+.page-wrapper.justify-center {
+    justify-content: center;
+}
+.page-wrapper.align-center {
+    align-items: center;
+}
 
 /*
     The "container", sometimes referred to as a "section", is a container
